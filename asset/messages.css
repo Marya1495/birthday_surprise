@@ -1,0 +1,208 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('images/message-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #4b2e1d;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  animation: fadeIn 2s ease-in-out;
+}
+/* Centered Memories Button */
+.go-to-memories {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  pointer-events: auto;
+}
+
+.memories-btn {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(255, 107, 107, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+}
+.memories-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.6);
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(1.02); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Floating effect for container */
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Overlay for readability */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: -1;
+}
+
+/* Main container */
+.message-container {
+  width: 80%;
+  max-width: 800px;
+  background: rgba(255, 248, 240, 0.75); /* soft beige tone matching bg */
+  border-radius: 20px;
+  padding: 40px;
+  margin-top: 100px;
+  box-shadow: 0 10px 30px rgba(80, 60, 40, 0.2);
+  animation: floatUp 5s ease-in-out infinite;
+  backdrop-filter: blur(2px);
+  position: relative;
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  color: #b05a3c;
+  text-shadow: 0 0 8px #ffccaa;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #3e2a1f;
+  white-space: pre-line;
+  text-align: center;
+}
+
+/* Glowing border effect */
+.message-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(145deg, #ffdcc1, #fce0c2, #e3b799);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: borderGlow 6s linear infinite;
+}
+
+/* Keyframe for glowing border */
+@keyframes borderGlow {
+  0% { opacity: 0.6; filter: brightness(1); }
+  50% { opacity: 1; filter: brightness(1.2); }
+  100% { opacity: 0.6; filter: brightness(1); }
+}
+
+/* 🌸 Responsive Design 🌸 */
+
+/* Tablets and small laptops */
+@media (max-width: 1024px) {
+  .message-container {
+    width: 85%;
+    padding: 35px;
+    margin-top: 80px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 768px) {
+  body {
+    align-items: center;
+  }
+
+  .message-container {
+    width: 90%;
+    padding: 25px;
+    margin-top: 60px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  .message-container {
+    width: 92%;
+    padding: 20px;
+    margin-top: 50px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+/* 🌸 Centered Memories Button */
+/* .go-to-memories {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.memory-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(145deg, #b05a3c, #d47f56);
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(176, 90, 60, 0.3);
+  animation: fadeIn 2s ease-in-out;
+}
+
+.memory-btn:hover {
+  background: linear-gradient(145deg, #d47f56, #b05a3c);
+  box-shadow: 0 6px 20px rgba(176, 90, 60, 0.5);
+  transform: scale(1.05);
+}
+
+/* Mobile responsiveness for button 
+@media (max-width: 600px) {
+  .memory-btn {
+    font-size: 1rem;
+    padding: 10px 22px;
+  }
+} */

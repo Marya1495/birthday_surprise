@@ -1,0 +1,190 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('images/message-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: #f7e7c1;
+  color: #4b2e1d;
+  animation: fadeIn 2s ease-in-out;
+}
+
+header {
+  text-align: center;
+  margin-top: 40px;
+}
+
+h1 {
+  color: #b05a3c;
+  text-shadow: 0 0 8px #ffccaa;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 40px;
+  color: #b05a3c;
+}
+
+/* Photo Gallery Section */
+.photo-gallery {
+  padding: 40px 5%;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.photo-card {
+  position: relative;
+  background: rgba(255, 248, 240, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(80, 60, 40, 0.2);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 12px solid #000;
+  background-image: linear-gradient(rgba(255, 248, 240, 0.95), rgba(255, 248, 240, 0.95)),
+    linear-gradient(145deg, #f3c7a2, #e7b48a, #c8906f);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+/* Make the image fit nicely inside the frame */
+.photo-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 3px solid #e7b48a;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Caption under each photo */
+.photo-card p {
+  margin: 12px 0 16px;
+  color: #4b2e1d;
+  font-weight: 500;
+}
+
+/* Hover effect: lift slightly with a warm glow */
+.photo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(176, 90, 60, 0.4);
+  border-color: #e7b48a;
+}
+
+.photo-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 3px;
+  background: linear-gradient(145deg, #fcd6b3, #f0b996, #d78f6d);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: frameGlow 5s ease-in-out infinite;
+}
+
+@keyframes frameGlow {
+  0%, 100% { opacity: 0.6; filter: brightness(1); }
+  50% { opacity: 1; filter: brightness(1.2); }
+}
+
+/* Video Slider Section */
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 50%;
+  z-index: 2;
+  transition: background 0.3s ease;
+}
+
+.arrow:hover {
+  background: rgba(181, 84, 63, 0.8);
+}
+
+.arrow.left {
+  left: -60px;
+}
+
+.arrow.right {
+  right: -60px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .video-slider {
+    width: 95%;
+  }
+
+  .arrow.left {
+    left: -40px;
+  }
+
+  .arrow.right {
+    right: -40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .arrow.left {
+    left: -30px;
+  }
+
+  .arrow.right {
+    right: -30px;
+  }
+} */
+
+
+/* Back Button */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.home-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(145deg, #b05a3c, #d47f56);
+  color: #fff;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(176, 90, 60, 0.3);
+}
+
+.home-btn:hover {
+  background: linear-gradient(145deg, #d47f56, #b05a3c);
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🌸 Responsive Design */
+@media (max-width: 768px) {
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.3rem; }
+  .photo-card img { height: 200px; }
+  .video-card video { height: auto; }
+}

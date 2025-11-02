@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memories - For My Love</title>
+  <link rel="stylesheet" href="../asset/memories.css">
+</head>
+<body>
+  <header>
+    <h1>Some Beautiful Memories 💖</h1>
+  </header>
+
+  <!-- 🌸 Photo Gallery Section -->
+  <section class="photo-gallery">
+    <h2>📸 some lovely moments captured</h2>
+    <div class="gallery-grid">
+      <div class="photo-card"><img src="../asset/images/our first photo togather.jpg" alt="Memory 1"><p>Our First photo together ❤️</p></div>
+      <div class="photo-card"><img src="../asset/images/us when we just got togather.jpeg" alt="Memory 2"><p>Us when we just got togather</p></div>
+      <div class="photo-card"><img src="../asset/images/such cute smile.jpg" alt="Memory 3"><p>such cute smile🥹</p></div>
+      <div class="photo-card"><img src="../asset/images/my man with his mom.jpg" alt="Memory 4"><p>Cute baby boy with his mom😜</p></div>
+      <div class="photo-card"><img src="../asset/images/frashers_when we become seniors.jpg" alt="Memory 5"><p>After party when we become seniors</p></div>
+      <div class="photo-card"><img src="../asset/images/our lovly movment.jpeg" alt="Memory 6"><p>our lovly movment💕</p></div>
+      <div class="photo-card"><img src="../asset/images/eye to eye contact.jpeg" alt="Memory 7"><p>Went for photoshoot for first time..</p></div>
+      <div class="photo-card"><img src="../asset/images/our first aniversary.jpeg" alt="Memory 8"><p>our first aniversary💕</p></div>
+      <div class="photo-card"><img src="../asset/images/falling for each other again.jpeg" alt="Memory 8"><p>Falling for each other... once again💕!!!</p></div>
+      <div class="photo-card"><img src="../asset/images/when we played games in clg.jpg" alt="Memory 8"><p>It was ridiculously fun to play together!</p></div>
+      <div class="photo-card"><img src="../asset/images/when you first time lift me in saree.jpeg" alt="Memory 8"><p>when you first time lift me in saree💕</p></div>
+      <div class="photo-card"><img src="../asset/images/cute moment.jpeg" alt="Memory 8"><p>me kissing my favorite person💕</p></div>
+    </div>
+  </section>
+
+<section class="video-section">
+  <h2>🎥 some moments captured in Videos</h2>
+  <div class="video-slider" id="videoSlider">
+    <button class="arrow left" id="prevBtn">&#10094;</button>
+
+    <div class="video-wrapper">
+      <div class="video-card active">
+        <video controls>
+          <source src="../asset/videos/our first ever reel as couple.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="video-card active">
+        <video controls>
+          <source src="../asset/videos/our cute fights.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="video-card active">
+        <video controls>
+          <source src="../asset/videos/shy us when we first got togather.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="video-card active">
+        <video controls>
+          <source src="../asset/videos/you playing with my hair.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="video-card active">
+        <video controls>
+          <source src="../asset/videos/memory4.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <button class="arrow right" id="nextBtn">&#10095;</button>
+  </div>
+</section>
+
+<script>
+  const videoCards = document.querySelectorAll('.video-card');
+  const nextBtn = document.getElementById('nextBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  let index = 0;
+
+  function showVideo(i) {
+    videoCards.forEach((card, idx) => {
+      card.classList.toggle('active', idx === i);
+    });
+  }
+
+  nextBtn.addEventListener('click', () => {
+    index = (index + 1) % videoCards.length;
+    showVideo(index);
+  });
+
+  prevBtn.addEventListener('click', () => {
+    index = (index - 1 + videoCards.length) % videoCards.length;
+    showVideo(index);
+  });
+
+  // Initial state
+  showVideo(index);
+</script>
+
+<style>
+  .video-section {
+    text-align: center;
+    margin: 50px auto;
+    color: #b5543f;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .video-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .video-slider {
+    position: relative;
+    width: 80%;
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .video-wrapper {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    position: relative;
+    background: #000;
+  }
+
+  .video-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease;
+  }
+
+  .video-card.active {
+    opacity: 1;
+    pointer-events: all;
+    position: relative;
+  }
+
+  .video-card video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 5px 12px;
+    z-index: 2;
+    transition: background 0.3s ease;
+  }
+
+  .arrow:hover {
+    background: rgba(181, 84, 63, 0.9);
+  }
+
+  .arrow.left {
+    left: -60px;
+  }
+
+  .arrow.right {
+    right: -60px;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .video-slider {
+      width: 95%;
+    }
+    .arrow.left {
+      left: -40px;
+    }
+    .arrow.right {
+      right: -40px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .video-section h2 {
+      font-size: 1.5rem;
+    }
+    .arrow {
+      font-size: 2rem;
+      padding: 4px 10px;
+    }
+    .arrow.left {
+      left: -30px;
+    }
+    .arrow.right {
+      right: -30px;
+    }
+  }
+</style>
+
+
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Love ❤️</title>
+  <link rel="stylesheet" href="asset/style.css" />
+</head>
+<body>
+  <div class="hearts" id="hearts"></div>
+
+<section class="hero">
+  <div class="hero-content">
+    <!-- Birthday Image (centered) -->
+    <div class="birthday-image">
+      <img src="asset/images/home.png" alt="Birthday Cake">
+    </div>
+
+    <!-- Main Title -->
+    <h1>This is a little piece of my heart <br> -Made just for you....</h1>
+    <!-- <p>Happy Birthday, my love. This is a little piece of my heart — made just for you.</p> -->
+
+<!-- Button just below text -->
+      <div class="button-wrapper">
+        <a href="pages/messages.html" class="love-button">💌 I have written somthing for you..</a>
+      </div> 
+  </div>
+  </section>
+
+<footer>Made with ❤️ by Maithili</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+  // Function to trigger confetti blast from both sides
+  function birthdayBlast() {
+    // Left side
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { x: 0, y: 1 },
+      colors: ['#ff4d6d', '#ffb3c6', '#ffc8dd', '#ffe5ec', '#f9bec7']
+    });
+
+    // Right side
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { x: 1, y: 1 },
+      colors: ['#ff4d6d', '#ffb3c6', '#ffc8dd', '#ffe5ec', '#f9bec7']
+    });
+  }
+
+  // Trigger when page loads or refreshes
+  window.onload = () => {
+    birthdayBlast();
+
+    // Optional: make it feel more alive with a few extra pops
+    setTimeout(birthdayBlast, 800);
+    setTimeout(birthdayBlast, 1600);
+  };
+</script>
+
+
+<script src="asset/script.js"></script>
+</body>
+</html>
